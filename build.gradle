@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'ua.com.rozetka'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile group: 'org.testng', name: 'testng', version: '7.3.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.0.0-alpha-6'
+
+}
+test {
+    useTestNG() {
+        useDefaultListeners = true
+    }
+    ext.workingDirectory = 'build/'
+    scanForTestClasses = false
+
+    beforeTest { descriptor ->
+        logger.lifecycle("Gradle running test: ${descriptor}")
+    }
+}

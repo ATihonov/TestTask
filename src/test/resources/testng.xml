@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Task" parallel="classes">
+
+
+    <test verbose="1" name="rozetka main page test">
+        <classes>
+            <class name="TestTask"/>
+        </classes>
+    </test>
+
+</suite>
+
